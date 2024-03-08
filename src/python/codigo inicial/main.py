@@ -1,42 +1,5 @@
-import random
-
-def criar_boletin_pseudoaleatorio(tamanho: int) -> list:
-    notas = []
-    while tamanho > 0:
-        notas.append(random.randint(0,10))
-        tamanho -= 1
-    return notas
-
-def criar_boletin_aleatorio() -> list:
-    notas = []
-    tamanho = random.randint(1,10)
-    while tamanho > 0:
-        notas.append(random.randint(0,10))
-        tamanho -= 1
-    return notas
-
-def media(notas: list) -> float:
-    subtotal = 0
-    for nota in notas:
-        subtotal += nota
-    return subtotal/len(notas)
-
-historico_boletins = []
-def mostrar_notas(boletin: list):
-    try:
-        if boletin[0] != None:
-            print("---------------------------")
-            print("Boletin")
-            for index, nota in enumerate(boletin):
-                print("Nota " + str(index + 1) + " = " + str(nota))
-            media_formatada = str("{:.2f}".format(media(boletin)))
-            print("Media final = " + media_formatada)
-            print("---------------------------")
-            boletin.append(media_formatada)
-            historico_boletins.append(boletin)
-            return
-    except:
-        print("Boletin vazio")
+import boletins
+import historico
 
 def mensagem_principal() -> str:
     print("\nGerar Boletin Virtual \n")
@@ -70,10 +33,10 @@ def mensagem_boletin_manual():
         else: 
             print("Boletin encerrado")
             break
-    mostrar_notas(boletin)
+    boletins.mostrar_notas(boletin)
 
 def mostrar_historico():
-    historico = historico_boletins
+    historico = historico.historico_boletins
     for index, boletin in enumerate(historico):
         print("---------------------------")
         print("Boletin " + str(index + 1))
@@ -84,24 +47,34 @@ def mostrar_historico():
                 print("Nota " + str(index + 1) + " = " + str(nota))
         print("---------------------------")
             
-
-def main():
+def mensagem_criar_boletin():
     match mensagem_principal():
         case "1":
             match mensagem_boletin_aleatorio():
                 case "S":
                     tamanho = mensagem_digitar_tamanho()
-                    mostrar_notas(list(criar_boletin_pseudoaleatorio(tamanho)))
+                    boletins.mostrar_notas(list(boletins.criar_boletin_pseudoaleatorio(tamanho)))
                 case "N":
-                    boletin_aleatorio = criar_boletin_aleatorio()
-                    mostrar_notas(list(boletin_aleatorio))
+                    boletin_aleatorio = boletins.criar_boletin_aleatorio()
+                    boletins.mostrar_notas(list(boletin_aleatorio))
         case "2":
             mensagem_boletin_manual()
         case "3":
             mostrar_historico()
         case "4":
-            return
+            main()
     input("Aperte enter para voltar")
-    main()
+    mensagem_criar_boletin()
+
+def main():
+   print("SUAP")
+   escolha = int(input("Pagina de alunos: 1\nPagina de boletins: 2\nEncerrar programa: 3\nEscolha: "))
+   match escolha:
+        case 1:
+           pass
+        case 2:
+           mensagem_criar_boletin()
+        case _: 
+           return
 
 main()
