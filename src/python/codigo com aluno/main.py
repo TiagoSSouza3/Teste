@@ -14,7 +14,8 @@ def tela_alunos():
             case "2":
                 Aluno.lista_de_alunos()
             case "3":
-                Aluno.remover_aluno()
+                cpf = input("Digite o CPF do aluno que quer remover: ")
+                Aluno.remover_aluno(cpf)
             case _:
                 break
         
@@ -32,7 +33,7 @@ def tela_boletins():
             case _:
                 break
 
-def menu():
+def main():
     while True:
         print("\nOrganizador de notas\nPara gerenciar alunos digite: 1\nPara gerenciar boletins digite: 2\nEncerrar programa: 3")
         escolha = input("Escolha: ")
@@ -43,8 +44,5 @@ def menu():
                 tela_boletins()
             case _:
                 break
-
-def main():
-    menu()
 
 main()

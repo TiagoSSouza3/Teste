@@ -18,7 +18,7 @@ def mensagem_digitar_tamanho() -> int:
 def mensagem_boletin_manual():
     boletin = []
     while True:
-        acao = input("Adicionar uman nota (add) ou encerrar o boletin (end)?\nR: ")
+        acao = input("Adicionar uma nota (add) ou encerrar o boletin (end)?\nR: ")
         if acao == "add":
             try:
                 nota = int(input("Digite a nota: "))

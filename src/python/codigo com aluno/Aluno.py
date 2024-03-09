@@ -1,5 +1,22 @@
 alunos = []
 
+def remover_aluno(cpf: str):
+    aluno_atual: Aluno
+    for aluno in alunos:
+        if cpf == aluno.cpf:
+            aluno_atual = aluno
+            mostrar_aluno(aluno)
+            break
+    if aluno_atual != None:
+        validacao = input("\nTem certeza que deseja remover este aluno? S/N")
+        if validacao == "S":
+            alunos.remove(aluno_atual)
+            print("Aluno removido!!")
+        else:
+            print("Aluno não removido")
+    else:
+        print("Aluno não encontrado")
+
 def lista_de_alunos():
     while True:
         print("\nEncontrar Aluno\nBuscar aluno por cpf: 1\nBuscar aluno por nome: 2\nVer todos os alunos: 3\nVoltar: 4\n")
@@ -9,16 +26,17 @@ def lista_de_alunos():
                 cpf = input("\nDigite o cpf do aluno: ")
                 for aluno in alunos:
                     if cpf == aluno.cpf:
-                        print("\nDados do aluno")
-                        print("Nome: " + aluno.nome)
-                        print("Idade: " + str(aluno.idade))
-                        cpf = format_CPF(cpf)
-                        print("CPF: " + cpf)
+                        mostrar_aluno(aluno)
                         break
             case "2":
-                pass
+                nome = input("\nDigite o nome completo do aluno: ")
+                for aluno in alunos:
+                    if nome == aluno.nome:
+                        mostrar_aluno(aluno)
+                        break
             case "3":
-                pass
+                for aluno in alunos:
+                    mostrar_aluno(aluno)
             case _:
                 break
 
@@ -53,15 +71,11 @@ class Aluno():
         alunos.append(self)
         print("\nAluno Cadastrado!")
 
-    def get_cpf(self) -> str:
-        return self.cpf
-    
-    def get_nome(self) -> str:
-        return self.nome
-    
-    def get_idade(self) -> int:
-        return self.idade
-
     def adicionar_boletin(self, boletin: list):
         self.boletins.append(boletin)
-       
+
+def mostrar_aluno(aluno: Aluno):
+    print("\nDados do aluno")
+    print("Nome: " + aluno.nome)
+    print("Idade: " + str(aluno.idade))
+    print("CPF: " + format_CPF(aluno.cpf))
