@@ -35,30 +35,20 @@
     border: 14px solid #000000;
 }
 
-#button_border :hover {
-    color: #abb5c2 !important;
-}
-
 #button-image {
     width: 220px;
     height: 220px;
     padding-left: 40px;
     margin: 0;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+    padding-top: 9%;
 }
 
 #button_text {
     text-align: center;
     font-size: 80px;
-    padding-left: 300px;
+    padding-left: 13px;
     margin: 0;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+    padding-top: 29%;
 }
 
 a {
@@ -86,10 +76,8 @@ header {
 }
 
 .border_container {
-    border-style: solid;
-    border-width: 8px;
-    padding: 7px;
-    margin: 5px ;
+    padding: 10px;
+    margin: 15px ;
 }
 
 #header_home_image {
@@ -103,6 +91,44 @@ header {
 #home_text {
     border-style: none;
     font-size: 30px;
-    margin: 0;
+    margin: 0; 
     padding: 8px 8px;
+}
+
+#header_text {
+    font-size: 70px;
+    padding-left: 30%;
+}
+
+#main_container {
+    display: flex;
+}
+
+#left_container {
+    background-color: #838383;
+    width: 15%;
+    height: 1000px; 
+    margin: 0;
+    padding: 0;
+}
+
+#options_list {
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+    list-style-type: none;
+    display: block;
+}
+
+#list_element {
+    border-style: solid;
+    border-width: 4px;
+    border-radius: 10px;
+    border-color: #000000;
+    background: none;
+    text-align: center;
+    min-width: 250px;
+    padding: 20px;
+    margin: 10px 20px;
+    font-size: large;
 }
