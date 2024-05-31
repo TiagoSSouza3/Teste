@@ -31,8 +31,6 @@ def main():
         print('Numero invalido')
         return
 
-    result: int
-
     match operacao:
         case "1":
             result = numero + numero2

@@ -1,0 +1,2 @@
+conta = [int(input("Digite o primeiro numero: ")), input("Digite a operação numero('+', '-', '*', '/'): "), int(input("Digite o segundo numero: "))]
+print(str(conta[0] + conta[2])) if conta[1] == "+" else print(str(conta[0] - conta[2])) if conta[1] == "-" else print(str(conta[0] * conta[2])) if conta[1] == "*" else print(str(conta[0] / conta[2])) if conta[2] != 0 else print("Indeterminado")
