@@ -1,18 +1,24 @@
-#body_index {
+body {
     background: linear-gradient(90deg, rgb(48, 110, 244) 16%, rgb(89, 175, 241) 50%, rgb(98, 204, 236)100%);
 }
 
-#main_text_container {
+#main_text_container{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 15px auto;
+}
+
+#main_text {
     border-style: solid;
     border-width: 14px;
     border-radius: 100px;
-    margin: 50px 500px;
+    width: 600px;
     background-color: rgb(211, 251, 251);
 }
 
 #main_text_container h1 {
     text-align: center;
-    font-size: 70px;
+    font-size: 60px;
     -webkit-text-stroke-width: 2.7px;
     margin: auto;
     padding: 20px 0;
@@ -25,8 +31,8 @@
 }
 
 #button_border {
-    width: 600px;
-    height: 300px;
+    width: 500px;
+    height: 250px;
     background-color: #768fd3;
     border-style: solid;
     border-radius: 28px;
@@ -36,8 +42,8 @@
 }
 
 #button-image {
-    width: 220px;
-    height: 220px;
+    width: 170px;
+    height: 170px;
     padding-left: 40px;
     margin: 0;
     padding-top: 9%;
@@ -45,7 +51,7 @@
 
 #button_text {
     text-align: center;
-    font-size: 80px;
+    font-size: 75px;
     padding-left: 13px;
     margin: 0;
     padding-top: 29%;
@@ -68,6 +74,8 @@ header {
 
 #header-background {
     display: flex;
+    background: linear-gradient(90deg, rgb(131, 131, 131) 20%, rgb(150, 150, 150) 50%, rgb(220, 220, 220)100%);
+    border-bottom: 4px solid black;
 }
 
 #home_container{
@@ -98,17 +106,19 @@ header {
 #header_text {
     font-size: 70px;
     padding-left: 30%;
+    padding-top: 7px;
 }
 
 #main_container {
     display: flex;
+    height: 50vw;
 }
 
 #left_container {
     background-color: #838383;
-    width: 15%;
-    height: 1000px; 
-    margin: 0;
+    width: auto;
+    height: 100%; 
+    margin: 4px 0 0 0;
     padding: 0;
 }
 

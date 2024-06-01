@@ -1,5 +1,7 @@
 var current_page = ""
 var header_text = document.getElementById("header_text");
+var main_content = document.getElementById("main_content");
+var alunos = {}
 
 class Alunos{
     nome = ""

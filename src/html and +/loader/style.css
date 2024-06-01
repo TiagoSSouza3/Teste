@@ -1,0 +1,20 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 49vw;
+    margin: 0;
+}
+
+#loader {
+    border: 8px solid gray;
+    border-radius: 50%;
+    border-top: 8px solid red;
+    padding: 10px;
+    animation: loader 1.5s linear infinite;
+}
+
+@keyframes loader {
+    0% {rotate: 0deg;}
+    100% {rotate: 360deg;}
+}
